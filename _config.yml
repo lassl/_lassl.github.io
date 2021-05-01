@@ -33,6 +33,13 @@ authors:
     web: https://github.com/aisolab
     facebook: https://www.facebook.com/boseob.kim.16
     description: "언젠가는 자연어처리, 음성기술 기반으로 사람이 글과 말로 소통하는 것과 같은 수준의 인터페이스를 만들어보고 싶습니다."
+  minho.ryu:
+    name: minho.ryu
+    display_name: minho.ryu
+    email: ryumin93@sktbrain.com
+    web: https://github.com/bzantium
+    facebook: https://www.facebook.com/minho2ryu
+    description: "세상을 한층 더 편리하게 해줄 수 있는 서비스를 만들고 싶습니다."
 
 # RSS 2.0 can be used instead of Atom by uncommenting following two lines
 #feed:

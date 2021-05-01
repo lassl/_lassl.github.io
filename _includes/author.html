@@ -1,0 +1,15 @@
+<!-- Author Box -->
+{% if page.author %}
+{% assign author = site.authors[page.author] %}
+<div class="author">
+    <div class="author-box">
+        <a href="/menu/authors.html#{{ author.name }}"><img class="author-thumb" src="{{ site.github.url }}/assets/img/{{ author.name }}.jpg" alt="{{ author.display_name }}"></a>
+    </div>
+    <br>
+    <div class="author-box">
+        <a class="author-name" href="{{ site.github.url }}/menu/authors.html#{{ author.name }}">{{ author.display_name }}</a><a target="_blank" href="{{ author.facebook }}" class="author-btn-follow">Follow</a>
+        <br>
+        <span class="author-description">{{ author.description }}</span>
+    </div>
+</div>
+{% endif %}

@@ -1,0 +1,48 @@
+---
+layout: default
+---
+
+<div class="post-title">
+  {{ page.title }}
+</div>
+
+<span class="post-date">
+  {{ site.data.settings.post_date_prefix }}
+  {% assign d = page.date | date: "%-d"  %}
+  {{ page.date | date: "%B" }}
+  {% case d %}
+    {% when '1' or '21' or '31' %}{{ d }}st
+    {% when '2' or '22' %}{{ d }}nd
+    {% when '3' or '23' %}{{ d }}rd
+    {% else %}{{ d }}th{% endcase %},
+  {{ page.date | date: "%Y" }}
+  by
+  {% if page.author %}
+    <a class="mini-tag" href="{{ site.github.url }}/menu/authors.html#{{ page.author }}">{{ page.author }}</a>
+  {% else %}
+    {{ site.author }}
+  {% endif %}
+  <br>
+  {% for category in page.categories %}
+      <a class="mini-tag" href="{{ site.github.url }}/menu/categories.html#{{ category }}"><i class="fa fa-check" aria-hidden="true"></i>{{ category }}</a>
+  {% endfor %}
+  {% for tag in page.tags %}
+      <a class="mini-tag" href="{{ site.github.url }}/menu/tags.html#{{ tag }}"><i class="fa fa-check" aria-hidden="true"></i>{{ tag }}</a>
+  {% endfor %}
+</span>
+
+{% if page.image %}
+  <img src="{{ page.image }}">
+{% endif %}
+
+{{ content }}
+
+{% include author.html %}
+
+{% include social-sharing.html %}
+
+{% include related-posts.html %}
+
+{% if site.data.settings.disqus.comments %}
+  {% include disqus.html %}
+{% endif %}

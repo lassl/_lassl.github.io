@@ -40,6 +40,13 @@ authors:
     web: https://github.com/bzantium
     facebook: https://www.facebook.com/minho2ryu
     description: "세상을 한 층 더 편리하게 해줄 수 있는 서비스를 만들고 싶습니다."
+  hyungjun.kim:
+    name: hyungjun.kim
+    display_name: hyungjun.kim
+    email: soeque1@gmail.com
+    web: https://github.com/soeque1
+    facebook: https://www.facebook.com/hyungjun.kim.9887
+    description: "Done is better than perfect."
 
 # RSS 2.0 can be used instead of Atom by uncommenting following two lines
 #feed:

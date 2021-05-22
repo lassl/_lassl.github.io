@@ -47,6 +47,14 @@ authors:
     web: https://github.com/soeque1
     facebook: https://www.facebook.com/hyungjun.kim.9887
     description: "Done is better than perfect."
+  hyoungseok.kim:
+    name: hyoungseok.kim
+    display_name: hyoungseok.kim
+    email: hyoungseok.k@gmail.com
+    web: https://github.com/alxiom
+    facebook: https://www.facebook.com/alxiom
+    description: "이 광활한 우주에 한 줌 먼지와도 같은 존재일 따름입니다."
+ 
 
 # RSS 2.0 can be used instead of Atom by uncommenting following two lines
 #feed:

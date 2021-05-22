@@ -47,6 +47,12 @@ authors:
     web: https://github.com/soeque1
     facebook: https://www.facebook.com/hyungjun.kim.9887
     description: "Done is better than perfect."
+  taekyoon.choi:
+    name: taekyoon.choi
+    display_name: taekyoon.choi
+    email: tgchoi03@gmail.com
+    web: https://github.com/Taekyoon
+    description: "진정한 대화가 되는 기술을 개발하고 싶습니다."
   jaeho.kang:
     name: jaeho.kang
     display_name: jaeho.kang
@@ -61,7 +67,7 @@ authors:
     web: https://github.com/alxiom
     facebook: https://www.facebook.com/alxiom
     description: "이 광활한 우주에 한 줌 먼지와도 같은 존재일 따름입니다."
- 
+
 
 # RSS 2.0 can be used instead of Atom by uncommenting following two lines
 #feed:

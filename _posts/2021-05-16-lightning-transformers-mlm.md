@@ -3,7 +3,7 @@ layout: post
 title: Masked Language Modeling with lightning-transformers
 author: minho.ryu
 categories: [implementation]
-tags: []
+tags: [lightning-transformers, mlm]
 
 ---
 <img src="https://user-images.githubusercontent.com/19511788/118396034-8b12ba80-b688-11eb-8d2e-c6adef157ce8.png">

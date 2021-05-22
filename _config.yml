@@ -41,6 +41,13 @@ authors:
     facebook: https://www.facebook.com/minho2ryu
     description: "세상을 한층 더 편리하게 해줄 수 있는 서비스를 만들고 싶습니다."
 
+   youngki.moon:
+    name: youngki.moon
+    display_name:youngki.moon
+    email: ykmoon0814@gmail.com
+    web: https://ai4nlp.tistory.com
+    facebook: https://www.facebook.com/ykmoon1
+    description: "공부하는 미생입니다."
 # RSS 2.0 can be used instead of Atom by uncommenting following two lines
 #feed:
 #  path: rss-feed.xml

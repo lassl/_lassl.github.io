@@ -417,3 +417,5 @@ class MaskedLanguageModelingDataConfig(HFTransformerDataConfig):
 
 자 이렇게 lightning_transformers/task/nlp 에 필요한 파일들을 모두 추가하신 다음에 마지막으로 conf 폴더 아래에 필요한 yaml 파일들을 추가해주면 됩니다. 이 부분은 LM 과 관련된 파일을 보시면 충분히 이해하실 수 있기 때문에 생략하도록 하겠습니다.
 지금까지 lightning-transformers 를 이용해서 MLM 을 구현한 방법에 대해서 살펴보았습니다. 이 번 구현을 진행하면서 이 라이브러리를 구성하고 있는 세 가지 라이브러리에 대한 이해가 있다면 아주 쉽게 task 를 추가하거나 활용하여 수정할 수 있다는 것을 알 수 있었습니다. 정말 하루가 다르게 점점 더 사용 뿐만 아니라 개발 및 연구도 쉬워지는 것 같네요!
+
+p.s. 현 포스트에서 소개드린 masked_language_modeling 구현을 PytorchLightning/lightning-transformers repo 에 <a href="https://github.com/PyTorchLightning/lightning-transformers/pull/173">PR</a>을 날려 merge 되어 contributor가 되었네요! 도움 주신 모든 팀원 여러분들께 감사드립니다 :)

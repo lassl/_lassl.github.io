@@ -22,7 +22,7 @@ plugins:             [jekyll-paginate, jekyll-sitemap, jekyll-feed, jekyll-seo-t
 # Customise atom feed settings (this is where Jekyll-Feed gets configuration information)
 title: 'LASSL'
 description: 'Tech Blog'
-author: 'PRDL LAB from MODULAB'
+author: 'PRDL from MODULAB'
 
 # Authors
 authors:

@@ -4,7 +4,6 @@ title: Causal Language Modeling with lightning-transformers
 author: boseop.kim
 categories: [implementation]
 tags: [lightning-transformers, clm]
-
 ---
 
 - https://lightning-transformers.readthedocs.io/en/latest/tasks/nlp/language_modeling.html 를 예시로 동작 방식을 조금 상세하게 argument의 전달을 상세히 쓴 글입니다.
@@ -61,6 +60,7 @@ python train.py task=nlp/language_modeling dataset=nlp/language_modeling/wikitex
 ](https://hydra.cc/docs/patterns/instantiate_objects/overview)를 참고해주세요!)
 
 - `conf/dataset/nlp/language_modeling/wikitext.yaml`
+
     ```yaml
     # @package dataset 
     defaults:
@@ -75,6 +75,7 @@ python train.py task=nlp/language_modeling dataset=nlp/language_modeling/wikitex
 실제로 위의 yaml 파일에 정의된대로 `cfg` 하위에 정의된 `dataset_name`, `dataset_config_name`, `block_size` key에 대응되는 value로 `LanguageModelingDataModule` class를 instantiate하게 됩니다.
 
 - `lightning_transformers.task.nlp.language_modeling.LanguageModelingDataModule`
+
     ```python
     class LanguageModelingDataModule(HFDataModule):
         """
@@ -121,6 +122,7 @@ python train.py task=nlp/language_modeling dataset=nlp/language_modeling/wikitex
 `LanguageModelingDataModule`이 상속하는 class인 `HFDataModule`의 `load_dataset` method에서 cfg 하위에 정의된 value들을 사용합니다.
 
 - `lightning_transformers.core.nlp.data.HFDataModule`
+
     ```python
     class HFDataModule(TokenizerDataModule):
         """
@@ -155,11 +157,13 @@ python train.py task=nlp/language_modeling dataset=nlp/language_modeling/wikitex
                     cache_dir=self.cfg.cache_dir,
                     data_files=data_files
                 )
+        ...
     ```
 
 또 다른 yaml 파일인 `conf/task/nlp/language_modeling.yaml` 아래와 같으며 마찬가지로 `__target__`에 해당하는 `lightning_transformers.task.nlp.language_modeling.LanguageModelingTransformer`를 `downstream_model_type` key의 value인 `transformers.AutoModelForCausalLM` 전달하여 instantiate 하게됩니다.
 
 - `conf/task/nlp/language_modeling.yaml`
+
     ```yaml
     # @package task
     defaults:
@@ -170,6 +174,7 @@ python train.py task=nlp/language_modeling dataset=nlp/language_modeling/wikitex
     ```
 
 - `lightning_transformers.task.nlp.language_modeling.LanguageModelingTransformer`
+
     ```python
     class LanguageModelingTransformer(HFTransformer):
         """
@@ -218,6 +223,7 @@ python train.py task=nlp/language_modeling dataset=nlp/language_modeling/wikitex
 ```
 
 - `conf/backbone/nlp/default.yaml`
+
     ```yaml
     # @package backbone
     defaults:
@@ -228,6 +234,7 @@ python train.py task=nlp/language_modeling dataset=nlp/language_modeling/wikitex
 이와 같이 전달되면 lightning-transformers는 중간과정들을 거쳐 결과적으로 위의 `LanguageModelTransformer`가 상속하는 `HFTransformer`의 `__init__` method로 instantiate할 때, `backbone.pretrained_model_name_or_path`으로 전달되어 value에 맞게 class를 instantiate하게되는 것을 확인할 수 있습니다.
 
 - `lightning_transformers.core.nlp.model.HTTransformer`
+
     ```python
     class HFTransformer(TaskTransformer):
         """
@@ -274,6 +281,7 @@ python train.py task=nlp/language_modeling dataset=nlp/language_modeling/wikitex
 또한 `conf/backbone/nlp/default.yaml`에서 `/tokenizer@_group_: autotokenizer`에 대응되는 yaml 파일인 `conf/tokenizer/autotokenizer.yaml`을 확인해보면, `conf/backbone/nlp/default.yaml`의 `pretrained_model_name_or_path` key의 value인 `gpt2`가 `conf/tokenizer/autotokenizer.yaml`의 `pretrained_model_name_or_path` key의 value로 전달되어, 알맞게 tokenizer도 instantiate하는 것을 확인할 수 있습니다.
 
 - `conf/tokenizer/autotokenizer.yaml`
+
     ```yaml
     # @package tokenizer
     _target_: transformers.AutoTokenizer.from_pretrained
@@ -284,7 +292,7 @@ python train.py task=nlp/language_modeling dataset=nlp/language_modeling/wikitex
 ## Language Modeling Using Your Own Files
 huggingface datasets library로 바로 이용할 수 있는 corpus가 아닌 custom corpus를 사용해야하는 경우에는 line by line 형식으로 준비하여 활용할 수 있습니다.
 
-```
+```bash
 text,
 this is the first sentence,
 this is the second sentence,
@@ -299,6 +307,7 @@ python train.py task=nlp/language_modeling dataset.cfg.train_file=train.csv data
 위와 같이 전달하면 `conf/dataset/nlp/default.yaml`의 `cfg` 하위에 정의된 key인 `train_fle`, `validation_file`에 경로들을 value로 기입하는 것과 같습니다. 결과적으로는 관련있는 yaml 파일들이 아래와 같은 상태로 `train.py`에 전달되는 것과 같습니다.
 
 - `conf/task/nlp/language_modeling.yaml`
+
     ```yaml
     # @package task
     defaults:
@@ -309,6 +318,7 @@ python train.py task=nlp/language_modeling dataset.cfg.train_file=train.csv data
     ```
 
 - `conf/dataset/nlp/language_modeling/default.yaml`
+
     ```yaml
     # @package dataset
     defaults:
@@ -319,6 +329,7 @@ python train.py task=nlp/language_modeling dataset.cfg.train_file=train.csv data
     ```
 
 - `conf/dataset/nlp/default.yaml`
+
     ```yaml
     # @package dataset
     defaults:

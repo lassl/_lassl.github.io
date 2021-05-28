@@ -18,18 +18,19 @@ markdown:            kramdown
 highlighter:         rouge
 permalink:           none
 plugins:             [jekyll-paginate, jekyll-sitemap, jekyll-feed, jekyll-seo-tag]
+future: true
 
 # Customise atom feed settings (this is where Jekyll-Feed gets configuration information)
 title: 'LASSL'
 description: 'Tech Blog'
-author: 'PRDL LAB from MODULAB'
+author: 'PRDL from MODULAB'
 
 # Authors
 authors:
   boseop.kim:
     name: boseop.kim
     display_name: boseop.kim
-    email: boseop.kim@navercorp.com
+    email: bsk0130@gmail.com
     web: https://github.com/aisolab
     facebook: https://www.facebook.com/boseob.kim.16
     description: "언젠가는 자연어처리, 음성기술 기반으로 사람이 글과 말로 소통하는 것과 같은 수준의 인터페이스를 만들어보고 싶습니다."
@@ -39,9 +40,42 @@ authors:
     email: ryumin93@sktbrain.com
     web: https://github.com/bzantium
     facebook: https://www.facebook.com/minho2ryu
-    description: "세상을 한층 더 편리하게 해줄 수 있는 서비스를 만들고 싶습니다."
-
-   youngki.moon:
+    description: "세상을 한 층 더 편리하게 해줄 수 있는 서비스를 만들고 싶습니다."
+  hyungjun.kim:
+    name: hyungjun.kim
+    display_name: hyungjun.kim
+    email: soeque1@gmail.com
+    web: https://github.com/soeque1
+    facebook: https://www.facebook.com/hyungjun.kim.9887
+    description: "Done is better than perfect."
+  taekyoon.choi:
+    name: taekyoon.choi
+    display_name: taekyoon.choi
+    email: tgchoi03@gmail.com
+    web: https://github.com/Taekyoon
+    description: "진정한 대화가 되는 기술을 개발하고 싶습니다."
+  jaeho.kang:
+    name: jaeho.kang
+    display_name: jaeho.kang
+    email: greennuri@gmail.com
+    web: https://github.com/nuri428
+    facebook: https://www.facebook.com/greennuri
+    description: "에세이를 쓰는 AI를 만들어 보고 싶습니다 "
+  hyoungseok.kim:
+    name: hyoungseok.kim
+    display_name: hyoungseok.kim
+    email: hyoungseok.k@gmail.com
+    web: https://github.com/alxiom
+    facebook: https://www.facebook.com/alxiom
+    description: "이 광활한 우주에 한 줌 먼지와도 같은 존재일 따름입니다."
+  inje.ryu:
+    name: inje.ryou
+    display_name: iron
+    email: yij1126@gmail.com
+    web: https://github.com/IJryou
+    facebook: https://www.facebook.com/injae.ryou
+    description: "AI를 이용한 문제해결에 관심이 많고 어제보다 오늘 더 나아지고 싶습니다"
+  youngki.moon:
     name: youngki.moon
     display_name:youngki.moon
     email: ykmoon0814@gmail.com

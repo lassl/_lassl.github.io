@@ -11,7 +11,8 @@ title: authors
 
 <ul class="posts">
   {% for author in site.authors %}
-    <h3 class="class-name" id="{{ author[0] | slugify }}">{{ author[0] }}</h3>
+    <img class="author-thumb" style="margin-top:20px;" src="{{ site.github.url }}/assets/img/{{ author[0] }}.jpg">
+    <h3 class="class-name" style="margin-top:-3px;" id="{{ author[0] | slugify }}">{{ author[0] }}</h3>
     {% for post in site.posts %}
         {% if post.author == author[0] %}
             <li itemscope>

@@ -526,10 +526,15 @@ th, td {
 }
 
 .author-thumb {
-    width: 100px;
+    object-fit: cover;
+    width: 120px;
+    height: 120px;
     margin-right: 10px;
     border-radius: 100%;
     box-sizing: border-box;
+    background-position: center center;
+    background-repeat: no-repeat;
+    overflow: hidden;
 }
 
 .author-description {

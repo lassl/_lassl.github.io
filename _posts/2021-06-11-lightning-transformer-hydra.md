@@ -320,6 +320,47 @@ downstream_model_type: transformers.AutoModelForCausalLM
 ```
 
 ----
+그렇다면 새로운 흥미로운 예제에 응용을 해볼까요?
+
+최근 한국에서 공개된 [KLUE(Korean Language Understanding Evlauation)](!https://klue-benchmark.com/) 데이터가 있습니다.
+
+현재 KLUE 데이터셋과 벤치마크 모형이 오픈소스로 제공되고 있으므로 이를 Hydra와 Ligtning-transformer를 이용하여 학습하는 법에 대해 살펴봅니다.
+
+다양한 TASK 중에서 비교적 손쉬운 [KLUE-KNLI](https://klue-benchmark.com/tasks/68/overview/description) 분류 문제(classification)를 다뤄봅니다.
+
+데이터셋은 https://huggingface.co/datasets/viewer/?dataset=klue 에서도 확인할 수 있으며, KLUE 벤치마크 모형은 https://huggingface.co/klue 에서 확인할 수 있습니다.
+
+
+`ligtning-transformers`를 돌아와서 아래의 레포지토리를 설치 혹은 `clone` 한 후
+
+```
+https://github.com/PyTorchLightning/lightning-transformers
+```
+
+먼저 데이터셋 부터 정의합니다.
+
+`nli`에 맞게 task를 `nlp/text_classification`로 설정하고, `dataset_name`과 `dataset_config_name`을 정의합니다.
+그리고 모형 backbone으로는 `klue/bert-base`로 설정하고, gpu 갯수와 `max_epochs` 등 가장 기본적인 파라미터만 셋팅합니다.
+
+```
+python train.py task=nlp/text_classification dataset.cfg.dataset_name=klue dataset.cfg.dataset_config_name=nli backbone.pretrained_model_name_or_path=klue/bert-base trainer.gpus=1 trainer.max_epochs=10
+```
+
+[KLUE-NLI 리더보드](https://klue-benchmark.com/tasks/68/leaderboard/task)에서 KLUE-BERT-base의 `ACC`는 81.63으로 보고되고 있습니다. 위의 스크립트 실행 결과 약 81.4%의 정확도를 보입니다. 위의 스크립트에서 배치사이즈와 learning rate, 시퀀스 최대 길이 등을 간단히 변경한 아래의 스크립트로도 벤치마크 성능보다 뛰어난 82%의 정확도를 얻을 수 있습니다.
+
+```
+python train.py task=nlp/text_classification dataset.cfg.dataset_name=klue dataset.cfg.dataset_config_name=nli backbone.pretrained_model_name_or_path=klue/bert-base trainer.gpus=1 trainer.max_epochs=10 training.batch_size=64 training.lr=5e-05 dataset.cfg.max_length=64
+```
+
+c.f) 현재 `lightning-transformers`에서는 text_classification 시 data에서 `idx`와 `label`을 제외하고 첫번째 field와 두번째 field를 label을 예측하는 데 사용하고 있습니다.(https://github.com/PyTorchLightning/lightning-transformers/blob/master/lightning_transformers/task/nlp/text_classification/data.py#L59 참조) 따라서 위 코드로 실행 시 데이터셋을 재정의하거나 아래와 같이 수정한 후 실행하면 됩니다.
+
+```
+zip(example_batch[input_feature_fields[1]], example_batch[input_feature_fields[2]])
+```
+
+다음 편으로는 `hydra`에 집중하기보다 `ligtning-transformer`에서 특정 task를 해결하기 위해 `tokenizer` 및 `dataset`을 직접 정의하는 법에 대하여 알아보겠습니다.
+
+----
 
 본 블로그는 `hydra-core==1.1.0rc1`, `lightning-transformers==0.1` 버전을 기준으로 작성되었습니다.
 

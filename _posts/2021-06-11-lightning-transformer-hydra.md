@@ -117,7 +117,7 @@ num_workers: 16
 python train.py task=nlp/language_modeling training.batch_size=8
 ```
 
-본격적으로 `task`에 대해 알아봅니다.먼저 `conf/config.yaml`에 의해 `conf/task/default.yaml` 내용을 입력 받아야 합니다. 그런데, CLI 명령에 의해 `conf/task/nlp/language_modeling.yaml`로 대체됩니다.
+본격적으로 `task`에 대해 알아봅니다. 먼저 `conf/config.yaml`에 의해 `conf/task/default.yaml` 내용을 입력 받아야 합니다. 그런데, CLI 명령에 의해 `conf/task/nlp/language_modeling.yaml`로 대체됩니다.
 
 `conf/task/nlp/language_modeling.yaml`
 

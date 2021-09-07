@@ -75,6 +75,13 @@ authors:
     web: https://ai4nlp.tistory.com
     facebook: https://www.facebook.com/ykmoon1
     description: "공부하는 미생입니다."
+  doyoung.gwak:
+    name: doyoung.gwak
+    display_name: doyoung.gwak
+    email: tucan.dev@gmail.com
+    web: https://github.com/tucan9389
+    facebook: https://www.facebook.com/tucan9389
+    description: "취미로 하던게 업으로 이어지는것을 즐깁니다."
 # RSS 2.0 can be used instead of Atom by uncommenting following two lines
 #feed:
 #  path: rss-feed.xml

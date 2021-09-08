@@ -24,9 +24,9 @@ tags: [opensource, transformers, gpt, ner]
 
 ## Contribution 가이드 확인
 
-다음으로는 [CONTRIBUTING.md](http://contribution.md) 입니다. 기여가 많이 일어나는 저장소에는 기여 관련 내용으로 문서가 존재할 가능성이 큽니다. 기여를 하고싶은 사람들이 어떻게 기여할 수 있는지, 기여할만한 거리들 찾는 방법부터 환경세팅, PR가이드 등이 설명되어 있습니다.
+다음으로는 `CONTRIBUTING.md` 입니다. 기여가 많이 일어나는 저장소에는 기여 관련 내용으로 문서가 존재할 가능성이 큽니다. 기여를 하고싶은 사람들이 어떻게 기여할 수 있는지, 기여할만한 거리들 찾는 방법부터 환경세팅, PR가이드 등이 설명되어 있습니다.
 
-huggingface도 마찬가지로 [CONTRIBUTING.md](http://contribution.md) 가이드가 존재합니다. 
+huggingface도 마찬가지로 `CONTRIBUTING.md` 가이드가 존재합니다. 
 
 기여 가이드 문서를 확인해보면, 보통 새로운 모델의 논문을 낸 저자들이 huggingface에 contribution하고싶은 경우가 많은지, "Do you want to implement a new model?" 섹션이 꽤 상단에 올라가있네요. 저는 이번에 OpenAI가 이미 기여했었던 GPT2을 위한 새로운 NER 모델 (`GPT2ForTokenClassification`)을 구현해서 추가하는 작업이었기 때문에 이 부분은 넘어가도록 하겠습니다.
 
@@ -57,7 +57,7 @@ PR을 올리고 난 다음부터의 과정은 아래에서 설명하도록 하�
 
 ## PR 올리고 CI 테스트 진행 및 결과 확인
 
-PR을 올리면 아래와같이 자동으로 14개의 ci 테스트가 [CirecleCI](https://circleci.com/)에서 시작됩니다. CircleCI는 facebook, spotify 등 여러 큰 기업들에서도 사용하고 있는 [CI(Continuos Integration)](https://ko.wikipedia.org/wiki/%EC%A7%80%EC%86%8D%EC%A0%81_%ED%86%B5%ED%95%A9) 도구입니다. 빌드 머신을 직접 구축할 필요 없이 CircleCI에 세팅된 빌드 머신으로 지속적 통합 개발 프로세스를 만들 수 있습니다. 진행되었던 테스트는 바로 끝나는 작업은 아니고 아니고 전체 사이클이 2시간 정도 걸렸습니다. 테스트가 진행되는동안은, 귀찮아서 안 읽고 있던 [CONTRIBUTING.md](http://contributing.md) 가이드나 [README.](http://readme.dm)md를 좀 찬찬히 읽고 오셔도 괜찮을듯 합니다.
+PR을 올리면 아래와같이 자동으로 14개의 ci 테스트가 [CirecleCI](https://circleci.com/)에서 시작됩니다. CircleCI는 facebook, spotify 등 여러 큰 기업들에서도 사용하고 있는 [CI(Continuos Integration)](https://ko.wikipedia.org/wiki/%EC%A7%80%EC%86%8D%EC%A0%81_%ED%86%B5%ED%95%A9) 도구입니다. 빌드 머신을 직접 구축할 필요 없이 CircleCI에 세팅된 빌드 머신으로 지속적 통합 개발 프로세스를 만들 수 있습니다. 진행되었던 테스트는 바로 끝나는 작업은 아니고 아니고 전체 사이클이 2시간 정도 걸렸습니다. 테스트가 진행되는동안은, 귀찮아서 안 읽고 있던 `CONTRIBUTING.md` 가이드나 `README.md`를 좀 찬찬히 읽고 오셔도 괜찮을듯 합니다.
 
 ![image](https://user-images.githubusercontent.com/37643248/132370927-437854e9-2f75-439c-a25e-7e03b22d7aa1.png)
 

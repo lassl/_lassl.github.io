@@ -18,7 +18,7 @@ tags: [opensource, transformers, gpt, ner]
 
 ## 행동강령 확인 및 커뮤니티 분위기 파악
 
-다양하고 수많은 사람들이 오가는 커뮤니티이기 때문에 보통 이런 저장소에는 [행동강령(Code of Conduct) 문서](https://github.com/huggingface/transformers/blob/master/CODE_OF_CONDUCT.md)가 존재합니다. 건강한 커뮤니티를 위해서 의사소통할 때 갖춰야할 태도나, 해서는 안되는 것들을 설명합니다. 다양한 의견들을 존중, 실수에대한 포용, 개인과 공동체를 함께 지향, 그리고 해서는 안되는 행동들에대한 정리가 있습니다. transformers 커뮤니티에서 행동강령을 위반하면 1. Correction 2. Warning 3. Temporary Ban 4. Permanent Ban의 지침이 따를 수 있습니다.
+다양하고 수많은 사람들이 오가는 커뮤니티이기 때문에 보통 이런 저장소에는 [행동강령(Code of Conduct) 문서](https://github.com/huggingface/transformers/blob/master/CODE_OF_CONDUCT.md)가 존재합니다. 건강한 커뮤니티를 위해서 의사소통할 때 갖춰야할 태도나, 해서는 안되는 것들을 설명합니다. 다양한 의견들을 존중, 실수에 대한 포용, 개인과 공동체를 함께 지향, 그리고 해서는 안 되는 행동들에 대한 정리가 있습니다. transformers 커뮤니티에서 행동강령을 위반하면 1. Correction 2. Warning 3. Temporary Ban 4. Permanent Ban의 지침이 따를 수 있습니다.
 
 행동강령의 내용은 worst case에대한 설명입니다. 실제 PR을 날리거나 issue를 만들어서 소통할 때 참고하기 좋은 문서는 아무래도 이전에 만들어져왔던 수많은 issue들과 PR들입니다. 첫 PR 올리는 사람들은 어디까지 디테일하게 문서를 작성하는지, 어떻게하면 리뷰어가 답변을 잘 주는지 등을 분석해보시면 좋습니다. (다른 커뮤니티와 분위기가 어떻게 다른지 궁금하시다면 리눅스 저장소를 참고해보셔도 좋을것 같습니다. 리눅스 저장소는 코드리뷰가 살벌한 것으로 유명합니다.)
 

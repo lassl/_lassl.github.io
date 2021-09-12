@@ -3,7 +3,7 @@
 먼저 아래의 command를 수행합니다.
 
 ```bash
-$ git config --local user.email "yourAccount@navercorp.om"
+$ git config --local user.email "yourAccount@navercorp.com"
 $ git config --local user.name "yourNickname or yourName"
 $ git config --local commit.template .gitmessage.txt
 ```
